@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+</head>
+
+<body>
+    <section>
+        <ul>
+
+
+            <li class="list active" data-filter="all">All</li>
+            <li class="list" data-filter="mobile">Mobile</li>
+            <li class="list" data-filter="shoe">Shoe</li>
+            <li class="list" data-filter="headphone">Headphone</li>
+            <li class="list" data-filter="watch">Watch</li>
+
+
+        </ul>
+        <div class="product">
+
+            <div class="itemBox mobile"><img src="images2/mobile1.jpg" alt=""></div>
+            <div class="itemBox shoe"><img src="images2/shoe1.jpg" alt=""></div>
+            <div class="itemBox headphone"><img src="images2/headphone1.jpg" alt=""></div>
+            <div class="itemBox watch"><img src="images2/watch1.jpg" alt=""></div>
+
+            <div class="itemBox mobile"><img src="images2/mobile2.jpg" alt=""></div>
+            <div class="itemBox shoe"><img src="images2/shoe2.jpg" alt=""></div>
+            <div class="itemBox headphone"><img src="images2/headphone2.jpg" alt=""></div>
+            <div class="itemBox watch"><img src="images2/watch2.jpg" alt=""></div>
+
+            <div class="itemBox mobile"><img src="images2/mobile3.jpg" alt=""></div>
+            <div class="itemBox shoe"><img src="images2/shoe3.jpg" alt=""></div>
+            <div class="itemBox headphone"><img src="images2/headphone3.jpg" alt=""></div>
+            <div class="itemBox watch"><img src="images2/watch3.jpg" alt=""></div>
+
+        </div>
+    </section>
+
+    <script src="jquery-3.4.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.list').click(function () {
+                let value = $(this).attr('data-filter');
+                if (value == 'all') {
+                    $('.itemBox').show('1000');
+                } else {
+                    $('.itemBox').not('.' + value).hide('1000');
+                    $('.itemBox').filter('.' + value).show('1000');
+                }
+
+            })
+            $(".list").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+            })
+
+
+
+        });
+    </script>
+</body>
+
+
+</html>
